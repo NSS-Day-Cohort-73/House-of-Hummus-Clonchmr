@@ -29,7 +29,7 @@ ul {
 }
 
 #purchase {
-    margin: 1rem 0 2rem 2rem;
+    margin: 1rem 0 2rem 10rem;
     padding: 0.5rem;
     background-color: rgb(111, 72, 227);
     color: rgb(230, 220, 255);
@@ -38,6 +38,7 @@ ul {
 
 .header {
     display: flex;
+    margin-left: 10em;
 }
 
 .logo {
@@ -48,3 +49,26 @@ ul {
     text-align: center;
     margin: 1rem 0 3rem 2rem;
 }
+
+#choices {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2em;
+}
+
+.choice {
+    width: 15%;
+    padding: 2em 1.5em;
+    border: 1px dashed dodgerblue;
+    border-radius: .5rem;
+    display: grid;
+    grid-template-columns: 1;
+    line-height: 2em;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+}
+
+.customerOrders {
+    margin-left: 12em;
+    line-height: 2em;
+}
+

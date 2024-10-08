@@ -18,7 +18,7 @@
 1. All 10 base dishes should be displayed as radio input options.
 1. All 9 vegetables should be displayed as radio input options.
 1. All 6 side dishes should be displayed as radio input options.
-1. All previously purchases meals should be displayed below the meal options. Each purchase should display the primary key and the total cost of the purcahsed meal.
+1. All previously purchases meals should be displayed below the meal options. Each purchase should display the primary key and the total cost of the purchased meal.
 
 ### State Management
 
@@ -56,10 +56,13 @@ sequenceDiagram
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Should transient state be represented in a database diagram? Why, or why not?
-   > Your answer here
-2. In the **FoodTruck** module, you are **await**ing the invocataion of all of the component functions _(e.g. sales, veggie options, etc.)_. Why must you use the `await` keyword there? Explain what happens if you remove it.
-   > Your answer here
+   > No it shouldn't because it's not permanent, and its a representation of objects already in the database. 
+
+2. In the **FoodTruck** module, you are **await**ing the invocation of all of the component functions _(e.g. sales, veggie options, etc.)_. Why must you use the `await` keyword there? Explain what happens if you remove it.
+   > You must use the await keyword because the component functions are asynchronous functions, and returning promises. If you take out the "await" keyword, without adjusting the component functions, you will return an unresolved promise.
+
 3. When the user is making choices by selecting radio buttons, explain how that data is retained so that the **Purchase Combo** button works correctly.
-   > Your answer here
+   > There are "change" eventListeners listening for a change in each menu options list. When a change is detected, the transient state is updated with the id of the option selected. Once the Purchase Combo button is clicked, a Post request is issued to the API to update the purchases array with the new transient state object. 
+
 4. You used the `map()` array method in the self assessment _(at least, you should have since it is a learning objective)_. Explain why that function is helpful as a replacement for a `for..of` loop.
-   > Your answer here
+   > It's cleaner, more concise, and some people find it easier to read. It also returns a new array, so you don't have to worry about       interfering with the original data. 
